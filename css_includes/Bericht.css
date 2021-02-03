@@ -1,0 +1,10 @@
+.message {
+  
+  font-size: x-large;
+  text-align:center;
+  
+}
+
+.continue-link { text-decoration: none; color: blue; }
+.continue-link:hover { text-decoration: underline; color: blue; }
+.continue-link:visited { color: blue; }
