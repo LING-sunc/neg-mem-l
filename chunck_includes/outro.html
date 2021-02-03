@@ -1,0 +1,36 @@
+<script language="javascript" type="text/javascript">
+function randomString() {
+  var randomstring = '';
+  var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+  var string_length = 10;
+  for (var i=0; i<string_length; i++) {
+    randomstring += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.randform.randomfield.value = randomstring;
+}
+</script>
+
+<style>
+p, table, input{font-family: "Times"; font-size: x-large;}
+</style>
+
+<div style="width: 25em;">
+<p>
+Thank you for your participation in this experiment!  
+</p>
+
+<p>
+Click on the button below to generate a random string. Copy (don't cut) that code and paste it into the corresponding field on the page for this HIT on Mechanical Turk.
+</p>
+
+<p>
+<form name="randform">
+<input type="button" value="Generate random string" onClick="randomString();">&nbsp;
+<input type="text" name="randomfield" value="">
+</form>
+</p>
+  
+<p>
+<b> Afterwards, don't forget to click on the link below to upload your results!</b>    
+</p>
+</div>
