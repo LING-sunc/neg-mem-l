@@ -1,130 +1,46 @@
-<style>
-p, table{
-font-family: "Times";
-font-size: x-large;
-}
-td {
-padding-left: 5px;
-padding-right: 5px;
-padding-top: 0px;
-padding-bottom: 0px;
-}
-.resizedTextbox {
-    width: 270px; 
-    height: 28px; 
-    padding: 1px; 
-    vertical-align: 3px; 
-    font-size: large; 
-    font-family: "Times New Roman", Times, serif;
-}
-p.smash {
-    margin: 0cm -0.5cm 0cm 0cm
-}
-</style>
+<div style="width: 35em;">
+<H3 style="text-align:center">
+    Demographic Information
+</H3>
 
-<!-- NOTES TO SELF ABOUT FORM VALIDATION:
-If nothing is entered into an <input> element with class="obligatory", the error raised comes from Form.js. 
-The validator for whether or not the input in "age" is numeric is from example_data.js. Ideally, I'd like 
-to include the opposite validation for "native language" to make sure no one enters numerals 
-(regex: check for /D (= not digits)) in that field. Not crucial though. -->
+<table class="center">
+    <!-- 1. Collecting Age  -->
+    <tr>
+        <td colspan="2" style="width: 30em; padding-bottom: 1em;"> We need some general demographic information from you for the comparability of our study. Please fill out the fields below. All fields must contain an entry before you can click on "continue".</td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td><input name="Age" type="text" size="35" class="obligatory"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label class="error" for="Age"></label></td>
+    </tr>
+    <tr><td><br></td></tr>
 
-<p class="smash">
-First of all, thank you for participating in this experiment! <br> Please answer the following questions before continuing:
-</p>
+    <!-- 2. Ask for gender -->
+    <tr>
+        <td style="vertical-align:top">Gender:</td>
+        <td style="vertical-align:top">
+            <input name="Gender" type="radio" value="female" class="obligatory" id="csexfemale" /><label for="csexfemale"> female</label><br>
+            <input name="Gender" type="radio" value="male" class="obligatory" id="csexmale"/><label for="csexmale"> male</label><br>
+            <input name="Gender" type="radio" value="other" class="obligatory" id="csexother"/><label for="csexother"> other:</label>
+            <input name="other" type="text" size="15">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><label class="error" for="Gender"></label></td>
+    </tr>
+    <tr><td><br></td></tr>
 
-<!-- preloading images in the white space between paragraph and table; avoids fiddling with margins -->
-<!-- NEW IMAGES experiment 2 -->
-<img src='https://i.imgur.com/EaSKpUT.gif' alt='' height='0' width='0'/> <!--prac1-->
-<img src='https://i.imgur.com/hRSRwsX.gif' alt='' height='0' width='0'/> <!--prac2-->
-<img src='https://i.imgur.com/xaGC5tF.gif' alt='' height='0' width='0'/> <!--A1a1-->
-<img src='https://i.imgur.com/8AtWOZd.gif' alt='' height='0' width='0'/> <!--A1a2-->
-<img src='https://i.imgur.com/61ptN08.gif' alt='' height='0' width='0'/> <!--A1a3-->
-<img src='https://i.imgur.com/b4KkxX6.gif' alt='' height='0' width='0'/> <!--A1b1-->
-<img src='https://i.imgur.com/LyhzHkn.gif' alt='' height='0' width='0'/> <!--A1b2-->
-<img src='https://i.imgur.com/8kP7zq9.gif' alt='' height='0' width='0'/> <!--A1b3-->
-<img src='https://i.imgur.com/pn2YaA6.gif' alt='' height='0' width='0'/> <!--A1c1-->
-<img src='https://i.imgur.com/DorUkbm.gif' alt='' height='0' width='0'/> <!--A1c2-->
-<img src='https://i.imgur.com/Tv1yleR.gif' alt='' height='0' width='0'/> <!--A1c3-->
-<img src='https://i.imgur.com/vzz2Pgo.gif' alt='' height='0' width='0'/> <!--A2a1-->
-<img src='https://i.imgur.com/6uagVag.gif' alt='' height='0' width='0'/> <!--A2a2-->
-<img src='https://i.imgur.com/JTDB7WE.gif' alt='' height='0' width='0'/> <!--A2a3-->
-<img src='https://i.imgur.com/GQLk5mR.gif' alt='' height='0' width='0'/> <!--A2b1-->
-<img src='https://i.imgur.com/OCeqUMF.gif' alt='' height='0' width='0'/> <!--A2b2-->
-<img src='https://i.imgur.com/Dz4qC8B.gif' alt='' height='0' width='0'/> <!--A2b3-->
-<img src='https://i.imgur.com/OyosmAI.gif' alt='' height='0' width='0'/> <!--A2c1-->
-<img src='https://i.imgur.com/KoNY9Pv.gif' alt='' height='0' width='0'/> <!--A2c2-->
-<img src='https://i.imgur.com/zHxZK2V.gif' alt='' height='0' width='0'/> <!--A2c3-->
-<img src='https://i.imgur.com/MCGjAej.gif' alt='' height='0' width='0'/> <!--C1aL1-->
-<img src='https://i.imgur.com/bxgbnsb.gif' alt='' height='0' width='0'/> <!--C1aL2-->
-<img src='https://i.imgur.com/HuFb87A.gif' alt='' height='0' width='0'/> <!--C1aR1-->
-<img src='https://i.imgur.com/eN4oLXY.gif' alt='' height='0' width='0'/> <!--C1b1-->
-<img src='https://i.imgur.com/d6qGa9T.gif' alt='' height='0' width='0'/> <!--C1b2-->
-<img src='https://i.imgur.com/PYr7qIi.gif' alt='' height='0' width='0'/> <!--C1b3-->
-<img src='https://i.imgur.com/m8YdR5h.gif' alt='' height='0' width='0'/> <!--C1c1-->
-<img src='https://i.imgur.com/phLmKdV.gif' alt='' height='0' width='0'/> <!--C1c2-->
-<img src='https://i.imgur.com/jLglGR6.gif' alt='' height='0' width='0'/> <!--C1c3-->
-<img src='https://i.imgur.com/Musq63A.gif' alt='' height='0' width='0'/> <!--M2a1-->
-<img src='https://i.imgur.com/1kuf75B.gif' alt='' height='0' width='0'/> <!--M2a2-->
-<img src='https://i.imgur.com/EsLESQ5.gif' alt='' height='0' width='0'/> <!--M2a3-->
-<img src='https://i.imgur.com/kg4VHpC.gif' alt='' height='0' width='0'/> <!--M2b1-->
-<img src='https://i.imgur.com/Wl6IUv5.gif' alt='' height='0' width='0'/> <!--M2b2-->
-<img src='https://i.imgur.com/6UTgq5X.gif' alt='' height='0' width='0'/> <!--M2b3-->
-<img src='https://i.imgur.com/k8w4cc6.gif' alt='' height='0' width='0'/> <!--M2c1-->
-<img src='https://i.imgur.com/g3iIrI8.gif' alt='' height='0' width='0'/> <!--M2c2-->
-<img src='https://i.imgur.com/LplqxwT.gif' alt='' height='0' width='0'/> <!--M2c3-->
-<img src='https://i.imgur.com/wlcmaMW.gif' alt='' height='0' width='0'/> <!--Q1a1-->
-<img src='https://i.imgur.com/lFWKokZ.gif' alt='' height='0' width='0'/> <!--Q1a2-->
-<img src='https://i.imgur.com/Rj0PYke.gif' alt='' height='0' width='0'/> <!--Q1a3-->
-<img src='https://i.imgur.com/hzrxumS.gif' alt='' height='0' width='0'/> <!--Q1b1-->
-<img src='https://i.imgur.com/t08vcou.gif' alt='' height='0' width='0'/> <!--Q1b2-->
-<img src='https://i.imgur.com/6Po70ye.gif' alt='' height='0' width='0'/> <!--Q1b3-->
-<img src='https://i.imgur.com/nmi1TB8.gif' alt='' height='0' width='0'/> <!--Q1c1-->
-<img src='https://i.imgur.com/RyH8ulz.gif' alt='' height='0' width='0'/> <!--Q1c2-->
-<img src='https://i.imgur.com/ypyJvuV.gif' alt='' height='0' width='0'/> <!--Q1c3-->
-<img src='https://i.imgur.com/awDiVxy.gif' alt='' height='0' width='0'/> <!--Q2a1-->
-<img src='https://i.imgur.com/l660Qkj.gif' alt='' height='0' width='0'/> <!--Q2a2-->
-<img src='https://i.imgur.com/5oQy8I2.gif' alt='' height='0' width='0'/> <!--Q2a3-->
-<img src='https://i.imgur.com/aLF9l3c.gif' alt='' height='0' width='0'/> <!--Q2b1-->
-<img src='https://i.imgur.com/ES0d8jD.gif' alt='' height='0' width='0'/> <!--Q2b2-->
-<img src='https://i.imgur.com/rpZzPwa.gif' alt='' height='0' width='0'/> <!--Q2b3-->
-<img src='https://i.imgur.com/F1YPkAx.gif' alt='' height='0' width='0'/> <!--Q2c1-->
-<img src='https://i.imgur.com/pqLyRem.gif' alt='' height='0' width='0'/> <!--Q2c2-->
-<img src='https://i.imgur.com/7Np2aiX.gif' alt='' height='0' width='0'/> <!--Q2c3-->
-<img src='https://i.imgur.com/k0jHUjk.gif' alt='' height='0' width='0'/> <!--V1a1-->
-<img src='https://i.imgur.com/jVDf5b8.gif' alt='' height='0' width='0'/> <!--V1a2-->
-<img src='https://i.imgur.com/pmBiuPQ.gif' alt='' height='0' width='0'/> <!--V1a3-->
-<img src='https://i.imgur.com/Ywipocm.gif' alt='' height='0' width='0'/> <!--V1b1-->
-<img src='https://i.imgur.com/RxRTTsm.gif' alt='' height='0' width='0'/> <!--V1b2-->
-<img src='https://i.imgur.com/Y08axbS.gif' alt='' height='0' width='0'/> <!--V1b3-->
-<img src='https://i.imgur.com/1llkUHt.gif' alt='' height='0' width='0'/> <!--V1c1-->
-<img src='https://i.imgur.com/rSZpeIY.gif' alt='' height='0' width='0'/> <!--V1c2-->
-<img src='https://i.imgur.com/7cmZXzA.gif' alt='' height='0' width='0'/> <!--V1c3-->
-
-<table>
-<tr>
-  <td colspan="2"><label class="error" for="name"></label></td>
-</tr>
-<tr>
-  <td>What is your age? </td>
-  <td><input type="text" name="age" class="resizedTextbox" /></td>
-</tr>
-<tr>
-  <td colspan="2"><label class="error" for="age"></label></td>
-</tr>
-<tr>
-  <td>What is your native language?</td>
-  <td><input type="text" name="lang" class="resizedTextbox obligatory" /></td>
-</tr>
-<tr>
-  <td colspan="2"><label class="error" for="lang"></label></td>
-</tr>
-<tr>
-  <td>What is your gender?</td>
-  <td><input type="radio" name="sex" value="male" id="csexmale" class="obligatory"/><label for="csexmale"> Male</label>
-      <input type="radio" name="sex" value="female" id="csexfemale"/><label for="csexfemale"> Female</label>
-      <input type="radio" name="sex" value="other" id="csexother"/><label for="csexother"> Other</label>     
-</tr>
-<tr>
-  <td colspan="2"><label class="error" for="sex"></label></td>
-</tr>
+    <!-- 3. Native Language -->
+    <tr>
+        <td style="vertical-align:top">Native language:</td>
+        <td style="vertical-align:top"><input name="Native language" type="text" size="30" class="obligatory"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label class="error" for="Native language"></label></td>
+    </tr>
+    <tr><td><br></td></tr>
 </table>
+
+</div>
