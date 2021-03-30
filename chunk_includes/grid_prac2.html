@@ -1,0 +1,106 @@
+<style>
+p, table{
+font-family: "Times";
+font-size: x-large;
+line-height: 150%;
+}
+p.ex1{
+margin: -3cm 0cm .5cm 0cm; line-height: 155%;
+}
+    .resizedTextbox {
+    width: 100px; 
+    height: 25px; 
+    padding: 1px; 
+    vertical-align: 3px; 
+    font-size: large; 
+    font-family: "Times New Roman", Times, serif;
+}
+.resizedTextbox2 {
+    width: 150px; 
+    height: 25px; 
+    padding: 1px; 
+    vertical-align: 3px; 
+    font-size: large; 
+    font-family: "Times New Roman", Times, serif;
+} 
+  .resizedTextbox3 {
+    width: 250px;  
+    height: 100px; 
+    padding: 1px; 
+    vertical-align: 3px; 
+    font-size: large; 
+    font-family: 'Times New Roman', Times, serif; 
+  } 
+</style>
+
+<div style="width: 14em; margin-top: -100px;">
+<p style="text-align: center"><i> Please recreate the grid that you saw at the start of the trial.</i> </p>
+<table class = 'center' style="margin-top:-20px;">
+  <tr>
+    <td class = 'tap'><div class='squaredOne'> <input name = 'ul' type='checkbox' value='ul' id='ul' onclick="myFunction2()"/> <label for='ul'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='uc' id='uc' onclick="myFunction2()"/> <label for='uc'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='ur' id='ur' onclick="myFunction2()"/> <label for='ur'></label> </div></td>
+  </tr>
+  <tr>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='cl' id='cl' onclick="myFunction2()"/> <label for='cl'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='cc' id='cc' onclick="myFunction2()"/> <label for='cc'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='cr' id='cr' onclick="myFunction2()"/> <label for='cr'></label> </div></td>
+  </tr>
+  <tr>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='bl' id='bl' onclick="myFunction1()"/> <label for='bl'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='bc' id='bc' onclick="myFunction1()"/> <label for='bc'></label> </div></td>
+    <td class = 'tap'><div class='squaredOne'> <input type='checkbox' value='br' id='br' onclick="myFunction1()"/> <label for='br'></label> </div></td>
+  </tr>
+  </table>
+  </div>
+<p id="text1" style="display:none">Correct!</p>
+<p id="text2" style="display:none">Incorrect!</p>
+
+<script>
+
+   
+ function myFunction1() {  
+  var checkBox1 = document.getElementById("ul");
+  var checkBox2 = document.getElementById("uc"); 
+  var checkBox3 = document.getElementById("ur");
+  var checkBox4 = document.getElementById("cl");
+  var checkBox5 = document.getElementById("cc"); 
+  var checkBox6 = document.getElementById("cr");
+  var checkBox7 = document.getElementById("bl");
+  var checkBox8 = document.getElementById("bc"); 
+  var checkBox9 = document.getElementById("br");
+  var text1 = document.getElementById("text1");
+  var text2 = document.getElementById("text2");
+  if ( (checkBox7.checked == true) || (checkBox8.checked == true) || (checkBox9.checked == true) ) {
+      text1.style.display = "block"; 
+      setTimeout(function () {
+            text1.style.display = "none";
+        }, 800); } else text2.style.display = "block"; 
+          setTimeout(function () {
+            text2.style.display = "none";
+        }, 800); }
+    
+function myFunction2() {  
+  var checkBox1 = document.getElementById("ul");
+  var checkBox2 = document.getElementById("uc"); 
+  var checkBox3 = document.getElementById("ur");
+  var checkBox4 = document.getElementById("cl");
+  var checkBox5 = document.getElementById("cc"); 
+  var checkBox6 = document.getElementById("cr");
+  var checkBox7 = document.getElementById("bl");
+  var checkBox8 = document.getElementById("bc"); 
+  var checkBox9 = document.getElementById("br");
+  var text1 = document.getElementById("text1");
+  var text2 = document.getElementById("text2");
+      if ( (checkBox1.checked == true) || (checkBox2.checked == true) || (checkBox3.checked == true) || (checkBox4.checked == true) || (checkBox5.checked == true) || (checkBox6.checked == true) ) {
+     text2.style.display = "block"; 
+     setTimeout(function () {
+            text2.style.display = "none";
+        }, 800); }
+     else text1.style.display = "block"; 
+          setTimeout(function () {
+            text1.style.display = "none";
+        }, 800); }
+
+    
+</script>
