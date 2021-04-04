@@ -1,0 +1,19 @@
+.Vraag {
+}
+
+li.scale-box {
+    display: none;
+    float: left;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: x-large;
+}
+
+.scale-comment-box {
+    visibility: hidden;
+}
+
+span.fake-link {
+    color: Black;
+}
